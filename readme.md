@@ -22,6 +22,9 @@ V Database
 ## Example for changing the active database
 `into new_database`
 
+## Example for geting the active database
+`working_on`
+
 ## Example for creating a table
 ```agsl
 // Column definitions must be separed with a whitespace
