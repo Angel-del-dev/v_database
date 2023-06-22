@@ -27,8 +27,9 @@ V Database
 // Column definitions must be separed with a whitespace
 // The syntax is the following:
 // col_name:col_type:length:configuration
+// Configuration is separated by comma and no space
 // Configuration types:
 // Auto increment: ai
 // Unique: unique
-create table new_table id:int:11:ai name:varchar:300
+create table new_table id:int:11:ai,unique name:varchar:300
 ```

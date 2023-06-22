@@ -59,6 +59,7 @@ fn create_table_cols(name string, c_query_array []string) Table_col {
 		conf.delete(0)
 		length := conf[0]
 		conf.delete(0)
+		options := conf[0].split(',')
 
 		is_allowed := is_col_type_allowed(col_type)
 		if !is_allowed {
@@ -67,7 +68,7 @@ fn create_table_cols(name string, c_query_array []string) Table_col {
 		}
 
 		if conf.len > 0 && !error {
-			error = !are_options_allowed_by_type(col_type, conf)
+			error = !are_options_allowed_by_type(col_type, options)
 		}
 
 		if !error {
@@ -75,7 +76,7 @@ fn create_table_cols(name string, c_query_array []string) Table_col {
 				name: col_name
 				col_type: col_type
 				length: length.int()
-				options: conf
+				options: options
 			}
 		}
 
